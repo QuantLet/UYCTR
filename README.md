@@ -9,10 +9,13 @@ Name of Quantlet: UYCTReur
 
 Published in: submitted to N/A 
 
-Description: ‘Performs the Unified yield curve Taylor rule in forecasting the exchange rates, a combination of yield factors are tested to have the forecasting ability in forecasting the exchange rates. To fit a model with possible structural changes, we set several switching structures on a given dataset. The model is then used for forecasting over 3-12 monthos horizons. The input data are monthly observations of exchange rates and the pre-defined yield factors. Computes MAE for the forecasted values. Plots the time series of the predicted vs. observed values of exchange rates over the prediction interval.’
+Description: ‘Performs the Unified yield curve Taylor rule in forecasting thed exchange rates, a combination of yield factors are 
+tested to have the forecasting ability in forecasting the exchange rates. To fit a model with possible structural changes, we set 
+several switching structures on a given dataset. The model is then used for forecasting over 3-12 monthos horizons. The input data 
+are monthly observations of exchange rates and the pre-defined yield factors. Computes MAE for the forecasted values. Plots the time 
+series ofthe predicted vs. observed values of exchange rates over the prediction interval.’
 
 Keywords: ‘linear model, regression, state-space model, time varying, Markov Switching, exchange rates, prediction.’
-
 Author: Xinjue Li
 
 Submitted:  28 March 2019 by Xinjue Li
