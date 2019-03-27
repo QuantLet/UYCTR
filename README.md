@@ -16,6 +16,7 @@ are monthly observations of exchange rates and the pre-defined yield factors. Co
 series ofthe predicted vs. observed values of exchange rates over the prediction interval.’
 
 Keywords: ‘linear model, regression, state-space model, time varying, Markov Switching, exchange rates, prediction.’
+
 Author: Xinjue Li
 
 Submitted:  28 March 2019 by Xinjue Li
