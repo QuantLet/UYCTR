@@ -5,6 +5,6 @@
 
 ```yaml
 
-Name of Quantlet: PAMinsam
+Name of Quantlet: UYCTReur
 
 Published in: submitted to N/A 
