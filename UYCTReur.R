@@ -146,7 +146,7 @@ axis.Date(1, at = seq(as.Date("2010/1/1"), max(time)+6, "years"))
 legend(time[c(125)],3.0, c("Best competitor","True value", "UYCTR"),lty=c(1,1,1), lwd =c(3,3,3), pch=c('','',''), col=c(2,1,4), cex=1.1, bty='n')
 
 # Drifted Taylor Rule
-D      = read_excel("TRDUSChina.xlsx")
+D      = read_excel("TRDEuroChina.xlsx")
 D.1    = as.matrix(D[1:dim(D)[1], 2:dim(D)[2]])
 De     = apply(D.1, c(1,2), as.numeric)
 De.y   = De[(h+1):dim(De)[1], ]-De[1:(dim(De)[1]-h), ]
