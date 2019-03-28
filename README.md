@@ -37,7 +37,7 @@ Input:
 ```
 
 ![Picture1](TaylorRule.png)
-![Picture2](RMBtoEUR.pdf)
+![Picture2](RMBtoEUR.png)
 ![Picture3](RMBtoUSD.png)
 
 
