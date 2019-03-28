@@ -35,3 +35,22 @@ Input:
 
 
 ```
+
+![Picture1](TaylorRule.pdf)
+
+![Picture2](RMBtoEUR.png)
+
+![Picture3](RMBtoUSD.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
