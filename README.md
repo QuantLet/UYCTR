@@ -38,9 +38,12 @@ Input:
 
 ![Picture1](TaylorRule.pdf)
 
-![Picture2](RMBtoEUR.png)
+![Picture2](RMBtoEUR.pdf)
 
-![Picture3](RMBtoUSD.png)
+![Picture3](RMBtoUSD.pdf)
+
+### R Code
+```r
 
 
 
