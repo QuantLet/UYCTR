@@ -26,13 +26,13 @@ if(h==1){set.seed(30300)} else if(h==3){set.seed(30000)} else{set.seed(30300)}
 ee.y  = ee[(h+1)  :(length(ee[ ,1])), ]
 ee.x  = cbind(ee[1:(length(ee[ ,1])-h),  c(1:8)]) 
 
-X0    =  ee[1:(length(ee[ ,1])-h),  c(1:8)]
-Y0    =  ee[(h+1)  :  (length(ee[ ,1])), 1]
+X0    = ee[1:(length(ee[ ,1])-h),  c(1:8)]
+Y0    = ee[(h+1)  :  (length(ee[ ,1])), 1]
        
 # number of states
-L     =   c(12, 18, seq(24,102,6))
-b0    =   121
-b1    =   length(ee[, 1])-(h+1)
+L         = c(12, 18, seq(24,102,6))
+b0        = 121
+b1        = length(ee[, 1])-(h+1)
 dlmle     = matrix(0, nrow=300, ncol=length(L))
 sigma.s   = rep(0,length(L))
 pred      = rep(0, b1)
@@ -60,8 +60,8 @@ for(t in b0:b1){
   j = 1
   i.0[j]  = t-L[1]
   
-  XP      =  X0[i.0[j]:t, ]
-  YP      =  Y0[i.0[j]:t]
+  XP      = X0[i.0[j]:t, ]
+  YP      = Y0[i.0[j]:t]
 
   # Select the best fitting of A^{*} at the initial step
   cf      = cv.glmnet(x=XP, y=YP, family="gaussian", nlambda=200, alpha=1, nfolds=3, intercept=T)
@@ -76,10 +76,10 @@ for(t in b0:b1){
  
   for (I in L[2:length(L)]){
     
-    j      =  j+1
+    j      = j+1
     i.0[j] = t-I    
-    XP     =  X0[i.0[j]:t, ]
-    YP     =  Y0[i.0[j]:t]
+    XP     = X0[i.0[j]:t, ]
+    YP     = Y0[i.0[j]:t]
     
     # Select the best fitting of A^{*} at time point 
     cf          = cv.glmnet(x=XP, y=YP, family="gaussian", nlambda=200, alpha=1, nfolds=5, intercept=T)
@@ -95,23 +95,25 @@ for(t in b0:b1){
     if (dlmle[t, j]>cri[j]){
     beta.1      = beta[j-1, ]
     pre = as.numeric (beta.1%*% c(1, ee.x[(t+1), ]))
-    pred[t+h] = pre
+    pred[t+h]   = pre
     sl[t] = L[j-1]
-    Lambda[t] = Lam.pe[j-1]
+    Lambda[t]   = Lam.pe[j-1]
     break
     } else{
-    beta.1 = beta[j, ]
-    pre  = as.numeric (beta.1%*% c(1,ee.x[(t+1), ]))
-    pred[t+h] = pre
+    beta.1      = beta[j, ]
+    pre         = as.numeric (beta.1%*% c(1,ee.x[(t+1), ]))
+    pred[t+h]   = pre
     sl[t] = L[j]
-    Lambda[t] = Lam.pe[j]
+    Lambda[t]   = Lam.pe[j]
     }    
   }  
 }
 a1 = sum(abs(pred[(b0+h):(b1+h)]-ee.y[(b0+1):(b1+1), 1])/length(pred[(b0+h):(b1+h)]-ee[(b0+h):(b1+h), 3]))
 # Random work
 a3 = sum(abs(ee[(b0+1):(b1+1), 1]-ee[(b0+h+1):(b1+h+1), 1])/length(ee[(b0+h):(b1+h), 2]-ee[(b0+h):(b1+h), 2]))
-
+a1
+a3
+       
 # Taylor rule       
 E      = read_excel("TREuroChina.xlsx")
 E.1    = as.matrix(E[3:dim(E)[1], 2:dim(E)[2]])
